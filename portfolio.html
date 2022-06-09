@@ -38,42 +38,100 @@
           <a href="./index.html" class="container__logo"
             >Web<span class="container__accent">Studio</span></a
           >
+          <button
+            type="button"
+            class="menu-button"
+            aria-expanded="false"
+            aria-controls="menu-container"
+            data-menu-button
+          >
+            <svg
+              class="menu-button__svg"
+              width="40"
+              height="40"
+              aria-label="Переключательно мобильного меню"
+            >
+              <use class="icon-cross" href="./images/mobile_menu.svg#icon-cross_menu"></use>
+              <use class="icon-burger" href="./images/mobile_menu.svg#icon-burger_menu"></use>
+            </svg>
+          </button>
+          <div class="menu-container" id="menu-container" data-menu>
+            <ul class="navigation">
+              <li class="navigation__item">
+                <a href="./index.html" class="navigation__link">Студия</a>
+              </li>
+              <li class="navigation__item navigation__item--strip">
+                <a href="./portfolio.html" class="navigation__link navigation__link--current"
+                  >Портфолио</a
+                >
+              </li>
+              <li class="navigation__item"><a href="" class="navigation__link">Контакты</a></li>
+            </ul>
 
-          <ul class="navigation navigation--list">
-            <li class="navigation__item">
-              <a href="./index.html" class="navigation__link">Студия</a>
-            </li>
-            <li class="navigation__item navigation__item--strip">
-              <a href="./portfolio.html" class="navigation__link navigation__link--current"
-                >Портфолио</a
-              >
-            </li>
-            <li class="navigation__item"><a href="" class="navigation__link">Контакты</a></li>
-          </ul>
+            <div class="contact-container">
+              <ul class="contact">
+                <li class="contact__item">
+                  <div class="contact__icon">
+                    <a href="mailto:info@example.com" class="contact__link contact__link--mail">
+                      <svg width="16" height="12" class="contact__svg--mail">
+                        <use href="./images/icons.svg#icon-mail"></use>
+                      </svg>
+                      info@example.com
+                    </a>
+                  </div>
+                </li>
+                <li class="contact__item">
+                  <div class="contact__icon">
+                    <a href="tel:+380961111111" class="contact__link contact__link--phone">
+                      <svg width="10" height="16" class="contact__svg contact__svg--phone">
+                        <use href="./images/icons.svg#icon-smartphone"></use>
+                      </svg>
+                      +38 096 111 11 11
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <ul class="mobile-networks">
+                <li class="mobile-networks__item">
+                  <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="mobile-networks__link"
+                    >Instagram</a
+                  >
+                </li>
+                <li class="mobile-networks__item">
+                  <a
+                    href="https://twitter.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="mobile-networks__link"
+                    >Twitter</a
+                  >
+                </li>
+                <li class="mobile-networks__item">
+                  <a
+                    href="https://uk-ua.facebook.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="mobile-networks__link"
+                    >Facebook</a
+                  >
+                </li>
+                <li class="mobile-networks__item">
+                  <a
+                    href="https://ru.linkedin.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="mobile-networks__link"
+                    >LinkedIn</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </nav>
-
-        <ul class="contact contact--list">
-          <li class="contact__item">
-            <div class="contact__icon">
-              <a href="mailto:info@example.com" class="contact__link">
-                <svg width="16" height="12" class="contact__svg">
-                  <use href="./images/icons.svg#icon-mail"></use>
-                </svg>
-                info@example.com
-              </a>
-            </div>
-          </li>
-          <li class="contact__item">
-            <div class="contact__icon">
-              <a href="tel:+380961111111" class="contact__link">
-                <svg width="10" height="16" class="contact__svg">
-                  <use href="./images/icons.svg#icon-smartphone"></use>
-                </svg>
-                +38 096 111 11 11
-              </a>
-            </div>
-          </li>
-        </ul>
       </div>
     </header>
 
@@ -105,7 +163,35 @@
             <li class="grid__element">
               <a href="" class="grid__link">
                 <div class="grid__box">
-                  <img class="grid__img" src="./images/project1.jpg" alt="Технокряк" width="370" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr1-desk.jpg    1x,
+                        ./images/jpg/projects/pr1-desk@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr1-tab.jpg    1x,
+                        ./images/jpg/projects/pr1-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr1-mob.jpg    1x,
+                        ./images/jpg/projects/pr1-mob@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="grid__img"
+                      src="./images/jpg/projects/pr1-mob.jpg"
+                      alt="Технокряк"
+                      width="450"
+                    />
+                  </picture>
                   <p class="grid__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -121,13 +207,35 @@
             <li class="grid__element">
               <a href="" class="grid__link">
                 <div class="grid__box">
-                  <img
-                    class="grid__img"
-                    src="./images/project2.jpg"
-                    alt="Постер New Orlean vs
-              Golden Star"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr2-desk.jpg    1x,
+                        ./images/jpg/projects/pr2-desk@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr2-tab.jpg    1x,
+                        ./images/jpg/projects/pr2-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr2-mob.jpg    1x,
+                        ./images/jpg/projects/pr2-mob@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="grid__img"
+                      src="./images/jpg/projects/pr2-mob.jpg"
+                      alt="Постер New Orlean vs Golden Star"
+                      width="450"
+                    />
+                  </picture>
                   <p class="grid__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -143,12 +251,35 @@
             <li class="grid__element">
               <a href="" class="grid__link">
                 <div class="grid__box">
-                  <img
-                    class="grid__img"
-                    src="./images/project3.jpg"
-                    alt="Ресторан Seafood"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr3-desk.jpg    1x,
+                        ./images/jpg/projects/pr3-desk@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr3-tab.jpg    1x,
+                        ./images/jpg/projects/pr3-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr3-mob.jpg    1x,
+                        ./images/jpg/projects/pr3-mob@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="grid__img"
+                      src="./images/jpg/projects/pr3-mob.jpg"
+                      alt="Ресторан Seafood"
+                      width="450"
+                    />
+                  </picture>
                   <p class="grid__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -164,12 +295,35 @@
             <li class="grid__element">
               <a href="" class="grid__link">
                 <div class="grid__box">
-                  <img
-                    class="grid__img"
-                    src="./images/project4.jpg"
-                    alt="Проект Prime"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr4-desk.jpg    1x,
+                        ./images/jpg/projects/pr4-desk@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr4-tab.jpg    1x,
+                        ./images/jpg/projects/pr4-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr4-mob.jpg    1x,
+                        ./images/jpg/projects/pr4-mob@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="grid__img"
+                      src="./images/jpg/projects/pr4-mob.jpg"
+                      alt="Проект Prime"
+                      width="450"
+                    />
+                  </picture>
                   <p class="grid__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -185,12 +339,35 @@
             <li class="grid__element">
               <a href="" class="grid__link">
                 <div class="grid__box">
-                  <img
-                    class="grid__img"
-                    src="./images/project5.jpg"
-                    alt="Проект Boxes"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr5-desk.jpg    1x,
+                        ./images/jpg/projects/pr5-desk@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr5-tab.jpg    1x,
+                        ./images/jpg/projects/pr5-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr5-mob.jpg    1x,
+                        ./images/jpg/projects/pr5-mob@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="grid__img"
+                      src="./images/jpg/projects/pr5-mob.jpg"
+                      alt="Проект Boxes"
+                      width="450"
+                    />
+                  </picture>
                   <p class="grid__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -206,12 +383,35 @@
             <li class="grid__element">
               <a href="" class="grid__link">
                 <div class="grid__box">
-                  <img
-                    class="grid__img"
-                    src="./images/project6.jpg"
-                    alt="Inspiration has no Borders"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr6-desk.jpg    1x,
+                        ./images/jpg/projects/pr6-desk@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr6-tab.jpg    1x,
+                        ./images/jpg/projects/pr6-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr6-mob.jpg    1x,
+                        ./images/jpg/projects/pr6-mob@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="grid__img"
+                      src="./images/jpg/projects/pr6-mob.jpg"
+                      alt="Inspiration has no Borders"
+                      width="450"
+                    />
+                  </picture>
                   <p class="grid__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -227,13 +427,35 @@
             <li class="grid__element">
               <a href="" class="grid__link">
                 <div class="grid__box">
-                  <img
-                    class="grid__img"
-                    src="./images/project7.jpg"
-                    alt="Издание Limited
-              Edition"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr7-desk.jpg    1x,
+                        ./images/jpg/projects/pr7-desk@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr7-tab.jpg    1x,
+                        ./images/jpg/projects/pr7-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr7-mob.jpg    1x,
+                        ./images/jpg/projects/pr7-mob@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="grid__img"
+                      src="./images/jpg/projects/pr7-mob.jpg"
+                      alt="Издание Limited Edition"
+                      width="450"
+                    />
+                  </picture>
                   <p class="grid__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -249,7 +471,35 @@
             <li class="grid__element">
               <a href="" class="grid__link">
                 <div class="grid__box">
-                  <img class="grid__img" src="./images/project8.jpg" alt="Проект LAB" width="370" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr8-desk.jpg    1x,
+                        ./images/jpg/projects/pr8-desk@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr8-tab.jpg    1x,
+                        ./images/jpg/projects/pr8-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr8-mob.jpg    1x,
+                        ./images/jpg/projects/pr8-mob@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="grid__img"
+                      src="./images/jpg/projects/pr8-mob.jpg"
+                      alt="Проект LAB"
+                      width="450"
+                    />
+                  </picture>
                   <p class="grid__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -265,12 +515,35 @@
             <li class="grid__element">
               <a href="" class="grid__link">
                 <div class="grid__box">
-                  <img
-                    class="grid__img"
-                    src="./images/project9.jpg"
-                    alt="Growing Business"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr9-desk.jpg    1x,
+                        ./images/jpg/projects/pr9-desk@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr9-tab.jpg    1x,
+                        ./images/jpg/projects/pr9-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/jpg/projects/pr9-mob.jpg    1x,
+                        ./images/jpg/projects/pr9-mob@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="grid__img"
+                      src="./images/jpg/projects/pr9-mob.jpg"
+                      alt="Growing Business"
+                      width="450"
+                    />
+                  </picture>
                   <p class="grid__overlay">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -296,7 +569,7 @@
             <a href="" class="container__logo container__logo-footer"
               >Web<span class="container__accent container__accent--footer">Studio</span></a
             >
-            <address>
+            <address class="footer__address">
               <ul class="footer__list">
                 <li class="footer__item">
                   <a
@@ -365,5 +638,6 @@
         </form>
       </div>
     </footer>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

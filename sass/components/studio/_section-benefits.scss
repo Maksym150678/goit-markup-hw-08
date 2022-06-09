@@ -1,8 +1,13 @@
 // Первая секция
 
-.section--benefits{
+.section-benefits{
   padding-top: 94px;
   padding-bottom: 94px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .visually-hidden {
@@ -19,27 +24,32 @@
   overflow: hidden;
 }
 
-.section__feature {
-  display: flex;
-
-  padding: 0;
-  margin: 0;
+.section-benefits__feature {
   list-style: none;
+
+  @media screen and (min-width: 768px) 
+  {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: -15px;
+  }
+
+}
+.section-benefits__item {
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 2 * 30px) / 2);
+    margin: 15px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc((100% - 4 * 30px) / 4);
+  }
 }
 
-/*.section__item {
-  width: calc((100% - 90px) / 4);
-
-
-  &:not(:first-child) {
-    margin-left: 30px;
-  }
-}*/
-
-
-.section__icon {
+.section-benefits__icon {
   display: flex;
-  width: 270px;
   height: 120px;
   background: #f5f4fa;
   border-radius: 4px;
@@ -48,25 +58,21 @@
   margin-bottom: 30px;
 }
 
-.section__title {
-  margin-bottom: 50px;
-
-  font-size: 36px;
-  line-height: 1.16;
-  text-align: center;
-
-  &--fontsize {
+.section-benefits__title {
   margin-top: 0px;
   margin-bottom: 10px;
 
   font-size: 14px;
   line-height: 1.14;
+  text-align: center;
   text-transform: uppercase;
-  text-align: start;
+
+  @media screen and (min-width: 768px) {
+    display: inline-block;
   }
 }
 
-.section__text {
+.section-benefits__text {
   color: $secondary-text-color;
   line-height: 1.71;
   margin-top: 0;

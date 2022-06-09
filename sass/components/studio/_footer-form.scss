@@ -1,15 +1,26 @@
 // Форма в футере
 
 .footer__form {
-  display: flex;
-  flex-wrap: wrap;
-
-  width: 570px;
-  margin-left: 93px;
   font-weight: 700;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 570px;
+    margin-left: 93px;
+  }
 }
 
 .footer__label {
+  display: block;
   margin-top: 0px;
   margin-bottom: 20px;
 
@@ -22,8 +33,9 @@
 }
 
 .footer__input {
-  width: 358px;
+  max-width: 450px;
   padding: 15px;
+  margin-bottom: 20px;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -32,36 +44,24 @@
   background-color: #2F303A;
   color: #ffffff;
   cursor: pointer;
+
+  @media screen and (min-width: 480px) {
+    width: 450px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 358px;
+    margin-bottom: 0;
+  }
 }
 
 .footer__button {
   display: flex;
-  align-items: center;
-  width: 200px;
+  // align-items: center;
+  max-width: 200px;
 
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 12px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 29px;
-
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  letter-spacing: $hero-letter-spacing;
-
-  background: $accent-color;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  border: none;
-  color: #ffffff;
-
-  cursor: pointer;
-
-  transition: background-color $transition-duration $timing-function;
+  margin: auto;
+  padding: 10px 29px;
 
   &::after {
   content: '';
@@ -70,12 +70,16 @@
   margin-left: 10px;
   flex-shrink: 0;
 
-  background-image: url(/goit-markup-hw-07/images/airplane.svg);
+  background-image: url(../images/airplane.svg);
   background-repeat: no-repeat;
   }
 
   &:hover,
   &:focus {
     background-color: #188CE8;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 12px;
   }
 }
